@@ -17,8 +17,8 @@
 #include "../macos/llama.cpp/llama.h"
 #else
 // Other platforms
-#include "ggml.h"
-#include "llama.h"
+#include "./llama.cpp/ggml.h"
+#include "./llama.cpp/llama.h"
 #endif
 
 #ifdef LLAMA_SHARED

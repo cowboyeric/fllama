@@ -14,7 +14,7 @@
 #elif TARGET_OS_OSX
 #include "../macos/llama.cpp/ggml.h"
 #else
-#include "ggml.h"
+#include "./llama.cpp/ggml.h"
 #endif
 
 extern "C" {

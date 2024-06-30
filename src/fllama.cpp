@@ -28,10 +28,10 @@
 #include "../macos/llama.cpp/llama.h"
 #else
 // Other platforms
-#include "base64.hpp"
-#include "common/common.h"
-#include "ggml.h"
-#include "llama.h"
+#include "./llama.cpp/common/base64.hpp"
+#include "./llama.cpp/common/common.h"
+#include "./llama.cpp/ggml.h"
+#include "./llama.cpp/llama.h"
 #endif
 
 #include <atomic>

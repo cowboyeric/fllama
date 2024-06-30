@@ -16,8 +16,8 @@ endif()
 set(LLAMA_NATIVE OFF CACHE BOOL "llama: disable -march=native flag" FORCE)
 
 if(ANDROID)
-    set(CMAKE_C_FLAGS "-DCMAKE_TOOLCHAIN_FILE=~/Library/Android/sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake${CMAKE_C_FLAGS} -DANDROID_ABI=arm64-v8a -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=android-23 -O3")
-    set(CMAKE_CXX_FLAGS "-DCMAKE_TOOLCHAIN_FILE=~/Library/Android/sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake ${CMAKE_CXX_FLAGS} -DANDROID_ABI=arm64-v8a -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=android-23 -O3")
+    set(CMAKE_C_FLAGS "-DCMAKE_TOOLCHAIN_FILE=~/Library/Android/sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake${CMAKE_C_FLAGS} -DANDROID_ABI=arm64-v8a -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=android-23 -O3 -fopenmp -static-openmp")
+    set(CMAKE_CXX_FLAGS "-DCMAKE_TOOLCHAIN_FILE=~/Library/Android/sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake ${CMAKE_CXX_FLAGS} -DANDROID_ABI=arm64-v8a -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=android-23 -O3 -fopenmp -static-openmp")
     # See discussion @ https://github.com/ggerganov/llama.cpp/pull/4926
 endif()
 
@@ -49,5 +49,6 @@ if(ANDROID)
     find_library(LOG_LIB log) # Find the log library
     target_link_libraries(fllama PUBLIC
       ${LOG_LIB} # Add this to link against the log library for Android
+            -static-openmp -fopenmp
     )
 endif()

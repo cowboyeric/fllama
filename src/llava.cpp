@@ -13,9 +13,9 @@
 #include "../macos/llama.cpp/common/common.h"
 #else
 // Other platforms
-#include "llama.h"
-#include "common/common.h"
-#include "common/base64.hpp"
+#include "./llama.cpp/llama.h"
+#include "./llama.cpp/common/common.h"
+#include "./llama.cpp/common/base64.hpp"
 #endif
 
 #include <cstdio>

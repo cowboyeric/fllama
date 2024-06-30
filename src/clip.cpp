@@ -26,22 +26,22 @@
 #include "../macos/llama.cpp/common/stb_image.h"
 #else
 // Other platforms
-#include "ggml.h"
-#include "ggml-alloc.h"
-#include "ggml-backend.h"
-#include "stb_image.h"
+#include "./llama.cpp/ggml.h"
+#include "./llama.cpp/ggml-alloc.h"
+#include "./llama.cpp/ggml-backend.h"
+#include "./llama.cpp/common/stb_image.h"
 #endif
 
 #ifdef GGML_USE_CUDA
-#include "ggml-cuda.h"
+#include "./llama.cpp/ggml-cuda.h"
 #endif
 
 // #ifdef GGML_USE_METAL
-// #include "ggml-metal.h"
+// #include "./llama.cpp/ggml-metal.h"
 // #endif
 
 // #define STB_IMAGE_IMPLEMENTATION
-// #include "stb_image.h"
+// #include "./llama.cpp/common/stb_image.h"
 
 #include <cassert>
 #include <cmath>
